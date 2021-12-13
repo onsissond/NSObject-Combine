@@ -1,0 +1,27 @@
+PODS:
+  - Nimble (9.2.0)
+  - "NSObject+Combine (5.2.2)"
+  - Quick (4.0.0)
+
+DEPENDENCIES:
+  - Nimble
+  - "NSObject+Combine (from `../`)"
+  - Quick
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  "NSObject+Combine":
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
+  "NSObject+Combine": e3605c88061c02dd6f44eb287f6241fe2299adc6
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+
+PODFILE CHECKSUM: 5aec6e75cf9601cc419a7f135212184cc3e5fb7b
+
+COCOAPODS: 1.11.2
