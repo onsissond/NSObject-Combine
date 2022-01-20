@@ -34,7 +34,7 @@ extension HasCancellable {
 
         set {
             synchronizedBag {
-                objc_setAssociatedObject(self, &cancellableContext, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                objc_setAssociatedObject(self, &cancellableContext, CombineDisposeBag(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
     }
