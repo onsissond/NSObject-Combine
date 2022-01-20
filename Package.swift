@@ -16,7 +16,11 @@ let package = Package(
             name: "NSObject-Combine",
             dependencies: [],
             path: ".",
-            sources: ["NSObject+Combine.swift", "HasCancellable.swift"]
+            sources: [
+                "NSObject+Combine.swift",
+                "HasCancellable.swift",
+                "CombineDisposeBag.swift"
+            ]
         ),
     ]
 )

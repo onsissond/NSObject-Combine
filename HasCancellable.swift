@@ -23,18 +23,18 @@ extension HasCancellable {
     public var disposeBag: Set<AnyCancellable> {
         get {
             synchronizedBag {
-                if let disposeObject = objc_getAssociatedObject(self, &cancellableContext) as? Set<AnyCancellable> {
-                    return disposeObject
+                if let disposeObject = objc_getAssociatedObject(self, &cancellableContext) as? CombineDisposeBag {
+                    return disposeObject.cancellable
                 }
-                let disposeObject = Set<AnyCancellable>()
+                let disposeObject = CombineDisposeBag(Set<AnyCancellable>())
                 objc_setAssociatedObject(self, &cancellableContext, disposeObject, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                return disposeObject
+                return disposeObject.cancellable
             }
         }
 
         set {
             synchronizedBag {
-                objc_setAssociatedObject(self, &cancellableContext, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                objc_setAssociatedObject(self, &cancellableContext, CombineDisposeBag(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
     }
